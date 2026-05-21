@@ -1,8 +1,9 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Zap, RefreshCw, AlignCenter, Sun, Crown, Scissors } from 'lucide-react'
+import { useInViewSection } from '@/hooks/useInViewSection'
+import { EyebrowBadge } from './ui/eyebrow-badge'
 
 const SERVICES = [
   {
@@ -62,8 +63,7 @@ const SERVICES = [
 ]
 
 export default function Services() {
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const { ref, isInView } = useInViewSection()
 
   return (
     <section
@@ -73,19 +73,16 @@ export default function Services() {
       aria-labelledby="servicios-title"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
           <div>
-            <motion.span
+            <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 mb-5"
+              className="mb-5"
             >
-              <span className="font-montserrat text-[10px] uppercase tracking-[0.3em] text-gold bg-gold/10 px-3 py-1.5 rounded-full">
-                Tratamientos
-              </span>
-            </motion.span>
+              <EyebrowBadge>Tratamientos</EyebrowBadge>
+            </motion.div>
             <motion.h2
               id="servicios-title"
               initial={{ opacity: 0, y: 20 }}

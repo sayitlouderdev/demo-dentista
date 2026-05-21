@@ -1,8 +1,9 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useInViewSection } from '@/hooks/useInViewSection'
+import { EyebrowBadge } from './ui/eyebrow-badge'
 import { Scan, Monitor, Camera, Sparkles } from 'lucide-react'
 
 const TECH_ITEMS = [
@@ -37,8 +38,7 @@ const TECH_ITEMS = [
 ]
 
 export default function Technology() {
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const { ref, isInView } = useInViewSection()
 
   return (
     <section
@@ -97,9 +97,7 @@ export default function Technology() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
             >
-              <span className="inline-flex items-center gap-2 font-montserrat text-[10px] uppercase tracking-[0.3em] text-gold/70 bg-gold/10 px-3 py-1.5 rounded-full mb-6">
-                Equipamiento 2024
-              </span>
+              <EyebrowBadge dim className="mb-6">Equipamiento 2024</EyebrowBadge>
               <h2
                 id="tech-title"
                 className="font-cormorant font-light text-ivory leading-tight"

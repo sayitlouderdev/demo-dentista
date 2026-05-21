@@ -1,7 +1,8 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useInViewSection } from '@/hooks/useInViewSection'
+import { EyebrowBadge } from './ui/eyebrow-badge'
 import Image from 'next/image'
 import { Star } from 'lucide-react'
 
@@ -63,8 +64,7 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function Testimonials() {
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const { ref, isInView } = useInViewSection()
 
   return (
     <section
@@ -83,14 +83,14 @@ export default function Testimonials() {
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
-          <motion.span
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 font-montserrat text-[10px] uppercase tracking-[0.3em] text-gold/70 bg-gold/10 px-3 py-1.5 rounded-full mb-6"
+            className="mb-6"
           >
-            Lo que dicen nuestros pacientes
-          </motion.span>
+            <EyebrowBadge dim>Lo que dicen nuestros pacientes</EyebrowBadge>
+          </motion.div>
           <motion.h2
             id="testimonials-title"
             initial={{ opacity: 0, y: 20 }}

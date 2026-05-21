@@ -1,9 +1,11 @@
 'use client'
 
-import { useRef, useState, useCallback, useEffect } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useState, useCallback, useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { GripVertical } from 'lucide-react'
+import { useInViewSection } from '@/hooks/useInViewSection'
+import { EyebrowBadge } from './ui/eyebrow-badge'
 
 const CASES = [
   {
@@ -106,10 +108,8 @@ function Slider({ beforeSrc, afterSrc, beforeAlt, afterAlt }: {
       role="img"
       aria-label={`Comparación antes y después: ${beforeAlt} / ${afterAlt}`}
     >
-      {/* After image (full) */}
       <Image src={afterSrc} alt={afterAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
 
-      {/* Before image (clipped) */}
       <div
         className="absolute inset-0 overflow-hidden"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
@@ -117,7 +117,6 @@ function Slider({ beforeSrc, afterSrc, beforeAlt, afterAlt }: {
         <Image src={beforeSrc} alt={beforeAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
       </div>
 
-      {/* Labels */}
       <div className="absolute top-3 left-3 bg-night/75 backdrop-blur-sm border border-white/10 rounded-lg px-2.5 py-1.5 pointer-events-none">
         <span className="font-montserrat text-[9px] uppercase tracking-[0.15em] text-white/70">Antes</span>
       </div>
@@ -125,7 +124,6 @@ function Slider({ beforeSrc, afterSrc, beforeAlt, afterAlt }: {
         <span className="font-montserrat text-[9px] uppercase tracking-[0.15em] text-night font-semibold">Después</span>
       </div>
 
-      {/* Divider line + handle */}
       <div
         className="absolute top-0 bottom-0 w-px bg-white/80"
         style={{ left: `${position}%` }}
@@ -140,8 +138,7 @@ function Slider({ beforeSrc, afterSrc, beforeAlt, afterAlt }: {
 }
 
 export default function BeforeAfter() {
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const { ref, isInView } = useInViewSection()
 
   return (
     <section
@@ -151,14 +148,14 @@ export default function BeforeAfter() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
-          <motion.span
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 font-montserrat text-[10px] uppercase tracking-[0.3em] text-gold bg-gold/10 px-3 py-1.5 rounded-full mb-6"
+            className="mb-6"
           >
-            Resultados reales
-          </motion.span>
+            <EyebrowBadge>Resultados reales</EyebrowBadge>
+          </motion.div>
           <motion.h2
             id="ba-title"
             initial={{ opacity: 0, y: 20 }}

@@ -1,8 +1,9 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Search, FileText, Star } from 'lucide-react'
+import { useInViewSection } from '@/hooks/useInViewSection'
+import { EyebrowBadge } from './ui/eyebrow-badge'
 
 const STEPS = [
   {
@@ -32,8 +33,7 @@ const STEPS = [
 ]
 
 export default function Process() {
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const { ref, isInView } = useInViewSection()
 
   return (
     <section
@@ -51,14 +51,14 @@ export default function Process() {
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
-          <motion.span
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 font-montserrat text-[10px] uppercase tracking-[0.3em] text-gold bg-gold/10 px-3 py-1.5 rounded-full mb-6"
+            className="mb-6"
           >
-            Nuestro proceso
-          </motion.span>
+            <EyebrowBadge>Nuestro proceso</EyebrowBadge>
+          </motion.div>
           <motion.h2
             id="process-title"
             initial={{ opacity: 0, y: 20 }}

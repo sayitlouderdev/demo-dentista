@@ -1,7 +1,8 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useInViewSection } from '@/hooks/useInViewSection'
+import { EyebrowBadge } from './ui/eyebrow-badge'
 import { MapPin, Phone, MessageCircle, Clock, Navigation } from 'lucide-react'
 
 const HOURS = [
@@ -11,8 +12,7 @@ const HOURS = [
 ]
 
 export default function Location() {
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const { ref, isInView } = useInViewSection()
 
   return (
     <section
@@ -57,9 +57,7 @@ export default function Location() {
             className="flex flex-col gap-8"
           >
             <div>
-              <span className="inline-flex items-center gap-2 font-montserrat text-[10px] uppercase tracking-[0.3em] text-gold/70 bg-gold/10 px-3 py-1.5 rounded-full mb-6">
-                Cómo encontrarnos
-              </span>
+              <EyebrowBadge dim className="mb-6">Cómo encontrarnos</EyebrowBadge>
               <h2
                 id="location-title"
                 className="font-cormorant font-light text-ivory"

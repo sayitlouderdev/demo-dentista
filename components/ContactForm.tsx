@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { useRef } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useInViewSection } from '@/hooks/useInViewSection'
+import { EyebrowBadge } from './ui/eyebrow-badge'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -36,8 +37,7 @@ const SERVICES = [
 ]
 
 export default function ContactForm() {
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const { ref, isInView } = useInViewSection()
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -85,9 +85,7 @@ export default function ContactForm() {
             transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
             className="lg:sticky lg:top-36"
           >
-            <span className="inline-flex items-center gap-2 font-montserrat text-[10px] uppercase tracking-[0.3em] text-gold bg-gold/10 px-3 py-1.5 rounded-full mb-7">
-              Solicitar cita
-            </span>
+            <EyebrowBadge className="mb-7">Solicitar cita</EyebrowBadge>
             <h2
               id="contact-title"
               className="font-cormorant font-light text-night leading-tight mb-6"

@@ -87,17 +87,15 @@ export async function POST(req: NextRequest) {
     } else {
       // Fallback: save to JSON file
       const dataDir = path.join(process.cwd(), 'data')
-      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true })
+      fs.mkdirSync(dataDir, { recursive: true })
 
       const filePath = path.join(dataDir, 'contact-submissions.json')
       let submissions: unknown[] = []
 
-      if (fs.existsSync(filePath)) {
-        try {
-          submissions = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
-        } catch {
-          submissions = []
-        }
+      try {
+        submissions = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+      } catch {
+        submissions = []
       }
 
       submissions.push(submission)

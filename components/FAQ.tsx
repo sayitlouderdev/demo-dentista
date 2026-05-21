@@ -1,7 +1,9 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useInViewSection } from '@/hooks/useInViewSection'
+import { EyebrowBadge } from './ui/eyebrow-badge'
 import { Plus, Minus } from 'lucide-react'
 
 const FAQS = [
@@ -32,8 +34,7 @@ const FAQS = [
 ]
 
 export default function FAQ() {
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const { ref, isInView } = useInViewSection()
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
@@ -44,14 +45,14 @@ export default function FAQ() {
     >
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
-          <motion.span
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 font-montserrat text-[10px] uppercase tracking-[0.3em] text-gold bg-gold/10 px-3 py-1.5 rounded-full mb-6"
+            className="mb-6"
           >
-            Preguntas frecuentes
-          </motion.span>
+            <EyebrowBadge>Preguntas frecuentes</EyebrowBadge>
+          </motion.div>
           <motion.h2
             id="faq-title"
             initial={{ opacity: 0, y: 20 }}

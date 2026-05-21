@@ -27,7 +27,6 @@ export default function AnimatedCounter({
     if (!isInView) return
 
     const startTime = performance.now()
-    const startValue = 0
 
     const easeOutExpo = (t: number) =>
       t === 1 ? 1 : 1 - Math.pow(2, -10 * t)
@@ -36,7 +35,7 @@ export default function AnimatedCounter({
       const elapsed = currentTime - startTime
       const progress = Math.min(elapsed / duration, 1)
       const easedProgress = easeOutExpo(progress)
-      const current = startValue + (target - startValue) * easedProgress
+      const current = target * easedProgress
 
       setValue(parseFloat(current.toFixed(decimals)))
 
