@@ -8,24 +8,24 @@ import { EyebrowBadge } from './ui/eyebrow-badge'
 
 const DOCTORS = [
   {
-    name: 'Dr. Rodrigo Salinas Montiel',
+    name: 'Dr. Alejandro Fuentes Carrillo',
     role: 'Director General · Rehabilitación Oral',
-    cedula: 'Cédula Profesional: 5872341 SSA',
-    bio: 'Especialista en rehabilitación oral integral con formación en la Universidad Autónoma de Yucatán y posgrado en el Instituto de Odontología Avanzada de Madrid. Más de 12 años transformando sonrisas con tecnología de vanguardia.',
+    cedula: 'Cédula Profesional: 6453812 SSA',
+    bio: 'Especialista en rehabilitación oral integral con formación en la Universidad Nacional Autónoma de México y posgrado en el Centro Europeo de Implantología de Barcelona. Más de 14 años reconstruyendo funcionalidad y estética dental.',
     specialties: ['Rehabilitación Oral', 'Implantes Oseointegrados', 'Prótesis Dental'],
-    awards: ['Premio Excelencia CODY 2021', 'Miembro ADM Nacional'],
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&auto=format&q=85',
-    imageAlt: 'Dr. Rodrigo Salinas Montiel, director de Clínica Dental Élite Mérida',
+    awards: ['Premio Excelencia CODY 2022', 'Miembro ADM Nacional'],
+    image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&auto=format&q=85',
+    imageAlt: 'Dr. Alejandro Fuentes Carrillo, director de Clínica Dental Élite Mérida',
   },
   {
-    name: 'Dra. Camila Vega Ríos',
+    name: 'Dra. Isabel Montoya Garza',
     role: 'Ortodoncia y Estética Dental',
-    cedula: 'Cédula Profesional: 7134902 SSA',
-    bio: 'Ortodoncista certificada con subespecialidad en ortodoncia invisible y estética dental. Formación en la UNAM y certificación internacional Invisalign Diamond Provider. Apasionada del diseño de sonrisa digital.',
+    cedula: 'Cédula Profesional: 8219047 SSA',
+    bio: 'Ortodoncista certificada con subespecialidad en alineadores invisibles y diseño digital de sonrisa. Formación en la Universidad de Guadalajara y certificación internacional Invisalign Diamond Provider desde 2019.',
     specialties: ['Ortodoncia Invisible', 'Estética Dental', 'Diseño de Sonrisa DSD'],
     awards: ['Invisalign Diamond Provider', 'Certificación AMOA 2023'],
-    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&auto=format&q=85',
-    imageAlt: 'Dra. Camila Vega Ríos, especialista en ortodoncia de Clínica Dental Élite',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&auto=format&q=85',
+    imageAlt: 'Dra. Isabel Montoya Garza, especialista en ortodoncia de Clínica Dental Élite',
   },
 ]
 

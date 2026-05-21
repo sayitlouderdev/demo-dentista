@@ -76,12 +76,12 @@ export default function Location() {
                 <div>
                   <p className="font-montserrat text-[11px] uppercase tracking-[0.15em] text-gold mb-1.5">Dirección</p>
                   <address className="not-italic font-montserrat text-sm text-white/70 leading-relaxed">
-                    Calle 42 #198, Col. Montebello
+                    Calle 17 #312 × 26 y 28, Col. García Ginerés
                     <br />
-                    97113 Mérida, Yucatán, México
+                    97070 Mérida, Yucatán, México
                   </address>
                   <a
-                    href="https://maps.google.com/?q=Calle+42+198+Montebello+Merida+Yucatan"
+                    href="https://maps.google.com/?q=Calle+17+312+Garcia+Gineres+Merida+Yucatan"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 font-montserrat text-[11px] text-gold hover:text-gold-light mt-3 transition-colors duration-300"
@@ -117,15 +117,15 @@ export default function Location() {
             {/* Contact CTA */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="tel:+529992345678"
+                href="tel:+529991874320"
                 className="group flex-1 flex items-center justify-center gap-2.5 border border-white/15 text-white/70 hover:border-gold/40 hover:text-gold font-montserrat text-[11px] uppercase tracking-[0.12em] px-6 py-3.5 rounded-full transition-all duration-400 ease-[cubic-bezier(0.32,0.72,0,1)]"
                 aria-label="Llamar a la clínica"
               >
                 <Phone className="w-3.5 h-3.5" />
-                999 234 5678
+                999 187 4320
               </a>
               <a
-                href="https://wa.me/529992345679?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+                href="https://wa.me/529991874321?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex-1 flex items-center justify-center gap-2.5 bg-gold text-night hover:bg-gold-light font-montserrat text-[11px] font-semibold uppercase tracking-[0.12em] px-6 py-3.5 rounded-full transition-all duration-400 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97]"
@@ -138,8 +138,8 @@ export default function Location() {
 
             {/* Como llegar info */}
             <p className="font-montserrat text-[12px] text-white/35 leading-relaxed">
-              A 2 minutos de Plaza Altabrisa · Estacionamiento propio · Fácil acceso en transporte público
-              (ruta 59 y 65) · Zona Montebello frente a Calle 51.
+              A 3 minutos del Parque de la Paz · Estacionamiento propio · Fácil acceso en transporte público
+              (ruta 12 y 51) · Zona García Ginerés, entre Calle 26 y Calle 28.
             </p>
           </motion.div>
         </div>

@@ -150,12 +150,12 @@ export default function Footer() {
             </p>
             <address className="not-italic flex flex-col gap-4">
               <a
-                href="tel:+529992345678"
+                href="tel:+529991874320"
                 className="flex items-center gap-3 font-montserrat text-[13px] text-white/45 hover:text-gold transition-colors duration-300"
                 aria-label="Llamar a la clínica"
               >
                 <Phone className="w-3.5 h-3.5 shrink-0 text-gold/50" aria-hidden="true" />
-                +52 999 234 5678
+                +52 999 187 4320
               </a>
               <a
                 href="mailto:sayitlouder.dev@gmail.com"
@@ -168,9 +168,9 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-3.5 h-3.5 shrink-0 text-gold/50 mt-0.5" aria-hidden="true" />
                 <span className="font-montserrat text-[13px] text-white/35 leading-relaxed">
-                  Calle 42 #198, Col. Montebello
+                  Calle 17 #312 × 26 y 28, Col. García Ginerés
                   <br />
-                  97113 Mérida, Yucatán
+                  97070 Mérida, Yucatán
                 </span>
               </div>
             </address>

@@ -49,13 +49,13 @@ const jsonLd = {
   description: 'Clínica dental premium especializada en rehabilitación oral, ortodoncia y estética dental',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Calle 42 #198, Col. Montebello',
+    streetAddress: 'Calle 17 #312 × 26 y 28, Col. García Ginerés',
     addressLocality: 'Mérida',
     addressRegion: 'Yucatán',
-    postalCode: '97113',
+    postalCode: '97070',
     addressCountry: 'MX',
   },
-  telephone: '+52-999-234-5678',
+  telephone: '+52-999-187-4320',
   email: 'sayitlouder.dev@gmail.com',
   openingHoursSpecification: [
     {
