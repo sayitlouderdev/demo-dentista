@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { GripVertical } from 'lucide-react'
 import { useInViewSection } from '@/hooks/useInViewSection'
-import { EyebrowBadge } from './ui/eyebrow-badge'
 
 const CASES = [
   {
@@ -143,19 +142,11 @@ export default function BeforeAfter() {
   return (
     <section
       ref={ref}
-      className="bg-ivory py-28 md:py-40"
+      className="bg-ivory py-20 md:py-32"
       aria-labelledby="ba-title"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="mb-6"
-          >
-            <EyebrowBadge>Resultados reales</EyebrowBadge>
-          </motion.div>
           <motion.h2
             id="ba-title"
             initial={{ opacity: 0, y: 20 }}
@@ -185,7 +176,7 @@ export default function BeforeAfter() {
               initial={{ opacity: 0, y: 32 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.32, 0.72, 0, 1] }}
-              className={`flex flex-col gap-4 ${i === 1 ? 'md:mt-8' : ''}`}
+              className="flex flex-col gap-4"
             >
               {/* Double-bezel wrapper */}
               <div className="p-1.5 bg-white/60 ring-1 ring-anthracite/8 rounded-[1.75rem]">

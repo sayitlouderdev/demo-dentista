@@ -73,7 +73,7 @@ export default function Team() {
               initial={{ opacity: 0, y: 32 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: i * 0.15, ease: [0.32, 0.72, 0, 1] }}
-              className={i === 1 ? 'md:mt-10' : ''}
+              className=""
             >
               {/* Double-bezel */}
               <div className="p-2 bg-white/4 ring-1 ring-white/10 rounded-[2rem]">

@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInViewSection } from '@/hooks/useInViewSection'
-import { EyebrowBadge } from './ui/eyebrow-badge'
 import { Plus, Minus } from 'lucide-react'
 
 const FAQS = [
@@ -40,19 +39,11 @@ export default function FAQ() {
   return (
     <section
       ref={ref}
-      className="bg-ivory py-28 md:py-40"
+      className="bg-ivory py-24 md:py-32"
       aria-labelledby="faq-title"
     >
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="mb-6"
-          >
-            <EyebrowBadge>Preguntas frecuentes</EyebrowBadge>
-          </motion.div>
           <motion.h2
             id="faq-title"
             initial={{ opacity: 0, y: 20 }}

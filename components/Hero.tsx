@@ -75,7 +75,7 @@ export default function Hero() {
           >
             La perfección
             <br />
-            <em className="text-gold-shimmer not-italic">empieza con</em>
+            <em className="text-gold not-italic">empieza con</em>
             <br />
             tu sonrisa.
           </motion.h1>

@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { Search, FileText, Star } from 'lucide-react'
 import { useInViewSection } from '@/hooks/useInViewSection'
-import { EyebrowBadge } from './ui/eyebrow-badge'
 
 const STEPS = [
   {
@@ -38,7 +37,7 @@ export default function Process() {
   return (
     <section
       ref={ref}
-      className="bg-ivory py-28 md:py-40 relative overflow-hidden"
+      className="bg-ivory py-24 md:py-32 relative overflow-hidden"
       aria-labelledby="process-title"
     >
       {/* Decorative background number */}
@@ -51,14 +50,6 @@ export default function Process() {
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="mb-6"
-          >
-            <EyebrowBadge>Nuestro proceso</EyebrowBadge>
-          </motion.div>
           <motion.h2
             id="process-title"
             initial={{ opacity: 0, y: 20 }}
@@ -88,7 +79,7 @@ export default function Process() {
                 initial={{ opacity: 0, y: 32 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: i * 0.12, ease: [0.32, 0.72, 0, 1] }}
-                className={`relative ${i === 1 ? 'md:mt-12' : ''}`}
+                className="relative"
               >
                 {/* Double-bezel card */}
                 <div className="p-1.5 bg-white/60 ring-1 ring-anthracite/8 rounded-[1.75rem] h-full">

@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useInViewSection } from '@/hooks/useInViewSection'
-import { EyebrowBadge } from './ui/eyebrow-badge'
 import { Scan, Monitor, Camera, Sparkles } from 'lucide-react'
 
 const TECH_ITEMS = [
@@ -97,7 +96,6 @@ export default function Technology() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
             >
-              <EyebrowBadge dim className="mb-6">Equipamiento 2024</EyebrowBadge>
               <h2
                 id="tech-title"
                 className="font-cormorant font-light text-ivory leading-tight"

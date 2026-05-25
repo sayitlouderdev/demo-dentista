@@ -70,7 +70,7 @@ export default function Testimonials() {
     <section
       ref={ref}
       id="testimonios"
-      className="bg-night py-28 md:py-40 relative overflow-hidden"
+      className="bg-night py-24 md:py-32 relative overflow-hidden"
       aria-labelledby="testimonials-title"
     >
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" aria-hidden="true" />

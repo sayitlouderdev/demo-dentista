@@ -69,7 +69,7 @@ export default function Services() {
     <section
       ref={ref}
       id="servicios"
-      className="bg-ivory py-28 md:py-40 relative"
+      className="bg-ivory py-20 md:py-28 relative"
       aria-labelledby="servicios-title"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -117,12 +117,9 @@ export default function Services() {
                 initial={{ opacity: 0, y: 32 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: i * 0.08, ease: [0.32, 0.72, 0, 1] }}
-                className={`group relative ${i === 1 ? 'md:mt-8' : ''} ${i === 3 ? 'lg:mt-0 md:-mt-4' : ''}`}
+                className="group relative"
               >
-                {/* Outer shell (double-bezel) */}
-                <div className="p-1.5 bg-white/60 ring-1 ring-anthracite/8 rounded-[1.75rem] hover:ring-gold/30 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-[0_12px_48px_rgba(201,168,76,0.1)]">
-                  {/* Inner core */}
-                  <div className="bg-white rounded-[calc(1.75rem-0.375rem)] px-7 py-8 flex flex-col gap-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
+                <div className="bg-white rounded-2xl px-7 py-8 flex flex-col gap-5 border border-anthracite/8 shadow-sm hover:border-gold/25 hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
                     {/* Icon + tag */}
                     <div className="flex items-start justify-between">
                       <div className="w-11 h-11 rounded-2xl bg-gold/8 flex items-center justify-center group-hover:bg-gold/15 transition-colors duration-400">
@@ -161,7 +158,6 @@ export default function Services() {
                         <span className="group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true">→</span>
                       </a>
                     </div>
-                  </div>
                 </div>
               </motion.article>
             )
