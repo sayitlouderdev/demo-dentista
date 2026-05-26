@@ -71,7 +71,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-7" aria-label="Navegación principal">
+          <nav className="hidden lg:flex items-center gap-7" aria-label="Navegación principal">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.href}
@@ -84,7 +84,7 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTAs */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+529992345678"
               className="flex items-center gap-1.5 font-montserrat text-[11px] text-white/45 hover:text-gold transition-colors duration-300"
@@ -107,7 +107,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden w-8 h-8 flex flex-col items-center justify-center gap-[5px] ml-2"
+            className="lg:hidden w-8 h-8 flex flex-col items-center justify-center gap-[5px] ml-2"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={menuOpen}

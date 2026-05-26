@@ -12,11 +12,11 @@ const CASES = [
     title: 'Rehabilitación Oral Completa',
     label: 'Coronas de porcelana · 6 meses',
     before: {
-      src: 'https://images.unsplash.com/photo-1572985025058-f43db7f89f46?w=700&auto=format&q=85',
+      src: '/ba-1-before.png',
       alt: 'Antes: dentición con desgaste severo',
     },
     after: {
-      src: 'https://images.unsplash.com/photo-1515378791624-2b2e93a81bf6?w=700&auto=format&q=85',
+      src: '/ba-1-after.png',
       alt: 'Después: sonrisa perfecta tras rehabilitación oral',
     },
   },
@@ -25,11 +25,11 @@ const CASES = [
     title: 'Ortodoncia Invisible',
     label: 'Alineadores transparentes · 14 meses',
     before: {
-      src: 'https://images.unsplash.com/photo-1505819244306-ef53954f9648?w=700&auto=format&q=85',
+      src: '/ba-2-before.png',
       alt: 'Antes: maloclusión y apiñamiento dental',
     },
     after: {
-      src: 'https://images.unsplash.com/photo-1529586691389-6e5f4a1f8b4a?w=700&auto=format&q=85',
+      src: '/ba-2-after.png',
       alt: 'Después: alineación perfecta con ortodoncia invisible',
     },
   },
@@ -38,11 +38,11 @@ const CASES = [
     title: 'Blanqueamiento Láser',
     label: 'Sistema Zoom · 1 sesión',
     before: {
-      src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&auto=format&q=85',
+      src: '/ba-3-before.png',
       alt: 'Antes: tinción dental por café y tabaco',
     },
     after: {
-      src: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=700&auto=format&q=85',
+      src: '/ba-3-after.png',
       alt: 'Después: dientes blancos tras blanqueamiento láser',
     },
   },
