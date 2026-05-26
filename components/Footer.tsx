@@ -37,9 +37,9 @@ const NAV_LINKS = [
 ]
 
 const LEGAL_LINKS = [
-  { label: 'Aviso de Privacidad', href: '#' },
-  { label: 'Términos de Uso', href: '#' },
-  { label: 'Política de Cookies', href: '#' },
+  { label: 'Aviso de Privacidad', href: '/aviso-de-privacidad' },
+  { label: 'Términos de Uso', href: '/terminos-de-uso' },
+  { label: 'Política de Cookies', href: '/politica-de-cookies' },
 ]
 
 const SOCIAL = [

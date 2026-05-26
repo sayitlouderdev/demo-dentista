@@ -117,9 +117,9 @@ export default function Services() {
                 initial={{ opacity: 0, y: 32 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: i * 0.08, ease: [0.32, 0.72, 0, 1] }}
-                className="group relative"
+                className="group relative h-full"
               >
-                <div className="bg-white rounded-2xl px-7 py-8 flex flex-col gap-5 border border-anthracite/8 shadow-sm hover:border-gold/25 hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+                <div className="bg-white rounded-2xl px-7 py-8 flex flex-col gap-5 border border-anthracite/8 shadow-sm hover:border-gold/25 hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] h-full">
                     {/* Icon + tag */}
                     <div className="flex items-start justify-between">
                       <div className="w-11 h-11 rounded-2xl bg-gold/8 flex items-center justify-center group-hover:bg-gold/15 transition-colors duration-400">
@@ -140,7 +140,7 @@ export default function Services() {
                       </p>
                     </div>
 
-                    <p className="font-montserrat text-[13px] text-anthracite/60 leading-relaxed">
+                    <p className="font-montserrat text-[13px] text-anthracite/60 leading-relaxed flex-1">
                       {service.description}
                     </p>
 

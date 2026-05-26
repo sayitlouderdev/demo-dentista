@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInViewSection } from '@/hooks/useInViewSection'
 import { Plus, Minus } from 'lucide-react'
+import Image from 'next/image'
 
 const FAQS = [
   {
@@ -39,10 +40,21 @@ export default function FAQ() {
   return (
     <section
       ref={ref}
-      className="bg-ivory py-24 md:py-32"
+      className="relative py-24 md:py-32 overflow-hidden"
       aria-labelledby="faq-title"
     >
-      <div className="max-w-4xl mx-auto px-6 md:px-12">
+      {/* Background image */}
+      <div className="absolute inset-0" aria-hidden="true">
+        <Image
+          src="/dentista-faq.png"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-ivory/80" />
+      </div>
+      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
           <motion.h2
             id="faq-title"

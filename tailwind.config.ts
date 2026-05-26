@@ -38,10 +38,15 @@ const config: Config = {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.8s cubic-bezier(0.32,0.72,0,1) forwards',
         shimmer: 'shimmer 3s linear infinite',
+        marquee: 'marquee 50s linear infinite',
       },
       transitionTimingFunction: {
         spring: 'cubic-bezier(0.32,0.72,0,1)',

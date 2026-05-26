@@ -73,11 +73,11 @@ export default function Team() {
               initial={{ opacity: 0, y: 32 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: i * 0.15, ease: [0.32, 0.72, 0, 1] }}
-              className=""
+              className="h-full flex flex-col"
             >
               {/* Double-bezel */}
-              <div className="p-2 bg-white/4 ring-1 ring-white/10 rounded-[2rem]">
-                <div className="bg-white/[0.04] rounded-[calc(2rem-0.5rem)] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
+              <div className="p-2 bg-white/4 ring-1 ring-white/10 rounded-[2rem] h-full">
+                <div className="bg-white/[0.04] rounded-[calc(2rem-0.5rem)] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] flex flex-col h-full">
                   {/* Image */}
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
@@ -97,7 +97,7 @@ export default function Team() {
                   </div>
 
                   {/* Info */}
-                  <div className="p-8 flex flex-col gap-5">
+                  <div className="p-8 flex flex-col gap-5 flex-1">
                     <div>
                       <h3 className="font-cormorant text-2xl font-medium text-ivory leading-tight mb-1">
                         {doctor.name}

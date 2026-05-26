@@ -28,14 +28,12 @@ export default function Hero() {
         className="absolute inset-0 scale-[1.15]"
       >
         <Image
-          src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1920&auto=format&q=85"
+          src="/dentista-hero.png"
           alt="Interior de Clínica Dental Élite Mérida — sala de tratamiento de lujo"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAKAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgUE/8QAIhAAAQMEAwEBAAAAAAAAAAAAAQIDBAAFERITISJB/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AKe02dF2bISqShqW3FRH6hY4BSPQFKB4oBB8ZIxrT1vWvbm4tzNsqUuShLaVJIJJBIyR8nXpSlHkn//Z"
+          className="object-cover object-right"
         />
       </motion.div>
 

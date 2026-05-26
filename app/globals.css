@@ -87,6 +87,15 @@ body {
   100% { background-position: -200% center; }
 }
 
+@theme {
+  --animate-marquee: marquee 50s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 /* Noise overlay texture */
 .noise-overlay::before {
   content: '';

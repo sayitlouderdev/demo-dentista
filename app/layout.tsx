@@ -37,11 +37,9 @@ export const metadata: Metadata = {
       'Experiencia dental de alto nivel en Mérida, Yucatán. Tecnología de vanguardia, equipo especializado, resultados perfectos.',
     locale: 'es_MX',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Clínica Dental Élite Mérida' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/og-image.png'],
   },
   other: {
     'theme-color': '#0D1F2D',
@@ -101,7 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="noise-overlay font-montserrat antialiased">
         <a
-          href="#servicios"
+          href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium focus:text-night focus:bg-gold"
         >
           Saltar al contenido

@@ -68,13 +68,11 @@ export default function Technology() {
             <div className="p-2 bg-white/5 ring-1 ring-white/10 rounded-[2rem]">
               <div className="relative overflow-hidden rounded-[calc(2rem-0.5rem)] aspect-[4/5] shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
                 <Image
-                  src="https://images.unsplash.com/photo-1588776814546-1ffed44d1f97?w=900&auto=format&q=85"
+                  src="/dentista-tecnologia.png"
                   alt="Sillón dental de alta tecnología en Clínica Dental Élite Mérida"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/wAARCAAKAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgUE/8QAFRABAQAAAAAAAAAAAAAAAAAAAAH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AKlgAAAAAB//2Q=="
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-night/60 via-transparent to-transparent" />

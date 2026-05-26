@@ -1,6 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useMotionValue, useAnimationFrame, useReducedMotion } from 'framer-motion'
 import { useInViewSection } from '@/hooks/useInViewSection'
 import { EyebrowBadge } from './ui/eyebrow-badge'
 import Image from 'next/image'
@@ -49,6 +50,8 @@ const TESTIMONIALS = [
   },
 ]
 
+const DOUBLED = [...TESTIMONIALS, ...TESTIMONIALS]
+
 function StarRating({ rating }: { rating: number }) {
   return (
     <div className="flex gap-0.5" aria-label={`Calificación: ${rating} de 5 estrellas`}>
@@ -63,8 +66,46 @@ function StarRating({ rating }: { rating: number }) {
   )
 }
 
+function TestimonialCard({ t }: { t: typeof TESTIMONIALS[number] }) {
+  return (
+    <div className="p-1.5 bg-white/4 ring-1 ring-white/8 rounded-[1.75rem] hover:ring-gold/20 transition-all duration-500 h-full">
+      <div className="bg-white/[0.04] rounded-[calc(1.75rem-0.375rem)] p-7 flex flex-col gap-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] h-full">
+        <StarRating rating={t.rating} />
+        <p className="font-montserrat text-[13px] text-white/65 leading-relaxed flex-1">
+          &ldquo;{t.text}&rdquo;
+        </p>
+        <footer className="flex items-center gap-3 pt-4 border-t border-white/8">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 ring-1 ring-gold/20">
+            <Image src={t.avatar} alt={`Foto de perfil de ${t.name}`} fill className="object-cover" sizes="40px" />
+          </div>
+          <div>
+            <p className="font-montserrat text-xs font-semibold text-ivory">{t.name}</p>
+            <p className="font-montserrat text-[10px] text-white/35">{t.location}</p>
+          </div>
+          <span className="ml-auto font-montserrat text-[10px] uppercase tracking-[0.12em] text-gold/60 bg-gold/8 px-2.5 py-1 rounded-full shrink-0">
+            {t.treatment}
+          </span>
+        </footer>
+      </div>
+    </div>
+  )
+}
+
 export default function Testimonials() {
   const { ref, isInView } = useInViewSection()
+  const trackRef = useRef<HTMLDivElement>(null)
+  const motionX = useMotionValue(0)
+  const xAcc = useRef(0)
+  const isDragging = useRef(false)
+  const reduceMotion = useReducedMotion()
+
+  useAnimationFrame((_, delta) => {
+    if (isDragging.current || reduceMotion || !trackRef.current) return
+    xAcc.current -= delta * 0.04
+    const half = trackRef.current.scrollWidth / 2
+    if (-xAcc.current >= half) xAcc.current += half
+    motionX.set(xAcc.current)
+  })
 
   return (
     <section
@@ -104,53 +145,44 @@ export default function Testimonials() {
             <em className="text-gold not-italic">que nos respaldan.</em>
           </motion.h2>
         </div>
-
-        {/* Masonry grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5">
-          {TESTIMONIALS.map((t, i) => (
-            <motion.blockquote
-              key={t.name}
-              initial={{ opacity: 0, y: 28 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: i * 0.08, ease: [0.32, 0.72, 0, 1] }}
-              className="break-inside-avoid"
-            >
-              {/* Double-bezel card */}
-              <div className="p-1.5 bg-white/4 ring-1 ring-white/8 rounded-[1.75rem] hover:ring-gold/20 transition-all duration-500">
-                <div className="bg-white/[0.04] rounded-[calc(1.75rem-0.375rem)] p-7 flex flex-col gap-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-                  {/* Stars */}
-                  <StarRating rating={t.rating} />
-
-                  {/* Quote */}
-                  <p className="font-montserrat text-[13px] text-white/65 leading-relaxed">
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-
-                  {/* Author */}
-                  <footer className="flex items-center gap-3 pt-4 border-t border-white/8">
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 ring-1 ring-gold/20">
-                      <Image
-                        src={t.avatar}
-                        alt={`Foto de perfil de ${t.name}`}
-                        fill
-                        className="object-cover"
-                        sizes="40px"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-montserrat text-xs font-semibold text-ivory">{t.name}</p>
-                      <p className="font-montserrat text-[10px] text-white/35">{t.location}</p>
-                    </div>
-                    <span className="ml-auto font-montserrat text-[10px] uppercase tracking-[0.12em] text-gold/60 bg-gold/8 px-2.5 py-1 rounded-full shrink-0">
-                      {t.treatment}
-                    </span>
-                  </footer>
-                </div>
-              </div>
-            </motion.blockquote>
-          ))}
-        </div>
       </div>
+
+      {/* Draggable marquee — full bleed */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative overflow-hidden select-none"
+        style={{
+          maskImage: 'linear-gradient(to right, transparent 0px, black 100px, black calc(100% - 100px), transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0px, black 100px, black calc(100% - 100px), transparent 100%)',
+        }}
+      >
+        <motion.div
+          ref={trackRef}
+          style={{ x: motionX }}
+          drag="x"
+          dragMomentum={false}
+          dragElastic={0}
+          className="flex gap-5 w-max py-4 px-10 cursor-grab active:cursor-grabbing"
+          onDragStart={() => { isDragging.current = true }}
+          onDragEnd={() => {
+            isDragging.current = false
+            xAcc.current = motionX.get()
+          }}
+        >
+          {DOUBLED.map((t, i) => (
+            <div key={i} className="shrink-0 w-[340px] sm:w-[380px]">
+              <TestimonialCard t={t} />
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Hint for mobile */}
+      <p className="text-center font-montserrat text-[10px] uppercase tracking-[0.2em] text-white/20 mt-6 md:hidden">
+        Arrastra para explorar
+      </p>
     </section>
   )
 }

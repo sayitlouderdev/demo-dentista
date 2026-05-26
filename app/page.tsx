@@ -15,7 +15,7 @@ import DentalQuiz from '@/components/DentalQuiz'
 
 export default function HomePage() {
   return (
-    <main>
+    <main id="main">
       <Header />
       <Hero />
       <TrustNumbers />
