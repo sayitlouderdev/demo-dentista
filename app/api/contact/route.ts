@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
 
       await transporter.sendMail({
         from: `"Clínica Dental Élite Mérida" <${smtpUser}>`,
-        to: process.env.CONTACT_EMAIL ?? 'sayitlouder.dev@gmail.com',
+        to: process.env.CONTACT_EMAIL ?? 'hola@liberastudio.com',
         replyTo: data.email,
         subject: `Nueva consulta de ${data.nombre} — ${data.servicio}`,
         html: `

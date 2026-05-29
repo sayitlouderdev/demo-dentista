@@ -31,7 +31,7 @@ Crea una landing page completa per una clinica dentale di lusso fittizia chiamat
 **Widget flottante:** DentalQuiz — 4 step che costruisce un URL WhatsApp personalizzato.
 
 **Vincoli:**
-- Tutti i dati sono fittizi tranne l'email reale: `sayitlouder.dev@gmail.com`
+- Tutti i dati sono fittizi tranne l'email reale: `hola@liberastudio.com`
 - `git init` + commit iniziale: `"Initial commit: Clínica Dental Élite Mérida"`
 - SEO: JSON-LD schema LocalBusiness + Dentist
 

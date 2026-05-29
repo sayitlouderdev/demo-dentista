@@ -61,8 +61,8 @@ export default function AvisoPrivacidad() {
             <p>
               Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales
               (derechos ARCO). Para ejercerlos, envíe una solicitud a{' '}
-              <a href="mailto:privacidad@clinicadentalelite.mx" className="text-gold hover:text-gold-dark underline underline-offset-2 transition-colors">
-                privacidad@clinicadentalelite.mx
+              <a href="mailto:hola@liberastudio.com" className="text-gold hover:text-gold-dark underline underline-offset-2 transition-colors">
+                hola@liberastudio.com
               </a>{' '}
               indicando su nombre completo, los datos a rectificar o cancelar, y copia de su identificación oficial.
               Responderemos en un plazo máximo de 20 días hábiles.

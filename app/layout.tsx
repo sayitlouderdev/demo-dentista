@@ -60,7 +60,7 @@ const jsonLd = {
     addressCountry: 'MX',
   },
   telephone: '+52-999-187-4320',
-  email: 'sayitlouder.dev@gmail.com',
+  email: 'hola@liberastudio.com',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',

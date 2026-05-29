@@ -67,8 +67,8 @@ export default function PoliticaDeCookies() {
             <h2 className="font-cormorant font-medium text-night text-xl mb-3">Contacto</h2>
             <p>
               Para cualquier consulta relacionada con esta política, contáctenos en{' '}
-              <a href="mailto:privacidad@clinicadentalelite.mx" className="text-gold hover:text-gold-dark underline underline-offset-2 transition-colors">
-                privacidad@clinicadentalelite.mx
+              <a href="mailto:hola@liberastudio.com" className="text-gold hover:text-gold-dark underline underline-offset-2 transition-colors">
+                hola@liberastudio.com
               </a>
               .
             </p>

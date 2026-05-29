@@ -158,12 +158,12 @@ export default function Footer() {
                 +52 999 187 4320
               </a>
               <a
-                href="mailto:sayitlouder.dev@gmail.com"
+                href="mailto:hola@liberastudio.com"
                 className="flex items-center gap-3 font-montserrat text-[13px] text-white/45 hover:text-gold transition-colors duration-300"
                 aria-label="Enviar correo a la clínica"
               >
                 <Mail className="w-3.5 h-3.5 shrink-0 text-gold/50" aria-hidden="true" />
-                Enviar correo
+                hola@liberastudio.com
               </a>
               <div className="flex items-start gap-3">
                 <MapPin className="w-3.5 h-3.5 shrink-0 text-gold/50 mt-0.5" aria-hidden="true" />

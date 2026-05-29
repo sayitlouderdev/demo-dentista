@@ -96,4 +96,4 @@ dentista/
 
 ---
 
-*Todos los datos son ficticios excepto `sayitlouder.dev@gmail.com`.*
+*Todos los datos son ficticios excepto `hola@liberastudio.com`.*

@@ -203,7 +203,7 @@ export default function BeforeAfter() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="text-center font-montserrat text-[11px] text-anthracite/35 mt-10"
         >
-          * Casos reales de pacientes de Clínica Dental Élite Mérida. Resultados individuales pueden variar.
+          * Casos ilustrativos de Clínica Dental Élite Mérida. Resultados individuales pueden variar.
         </motion.p>
       </div>
     </section>
