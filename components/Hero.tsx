@@ -27,13 +27,23 @@ export default function Hero() {
         style={{ y: bgY }}
         className="absolute inset-0 scale-[1.15]"
       >
+        {/* Desktop/tablet image */}
         <Image
           src="/dentista-hero.png"
           alt="Interior de Clínica Dental Élite Mérida — sala de tratamiento de lujo"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right"
+          className="object-cover object-right hidden sm:block"
+        />
+        {/* Mobile image */}
+        <Image
+          src="/dentista-hero-mobile.png"
+          alt="Interior de Clínica Dental Élite Mérida — sala de tratamiento de lujo"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center sm:hidden"
         />
       </motion.div>
 
